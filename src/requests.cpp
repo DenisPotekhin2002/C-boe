@@ -54,14 +54,14 @@ ExecutionDetails decode_executed_order(const std::vector<unsigned char> & messag
     int mask = castInt(str);
     mask /= 8;
     switch (mask % 4){
-        case 1:
-            exec_details.liquidity_indicator = LiquidityIndicator::Removed;
-            break;
-        case 0:
-            exec_details.liquidity_indicator = LiquidityIndicator::Added;
-            break;
-        default:
-            exec_details.liquidity_indicator = LiquidityIndicator::None;
+    case 1:
+        exec_details.liquidity_indicator = LiquidityIndicator::Removed;
+        break;
+    case 0:
+        exec_details.liquidity_indicator = LiquidityIndicator::Added;
+        break;
+    default:
+        exec_details.liquidity_indicator = LiquidityIndicator::None;
     }
     parseBool(internalized)
     parseBool(self_trade)
